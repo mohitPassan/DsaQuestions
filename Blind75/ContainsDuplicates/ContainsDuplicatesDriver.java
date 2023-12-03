@@ -20,7 +20,7 @@ public class ContainsDuplicatesDriver {
             System.out.println("Solution " + (i+1));
             for(int[] c : cases) {
                 boolean answer = solutions[0].containsDuplicate(c);
-                System.out.println("Case 1: " + answer);
+                System.out.println("Result: " + answer);
             }
             System.out.println();
         }
