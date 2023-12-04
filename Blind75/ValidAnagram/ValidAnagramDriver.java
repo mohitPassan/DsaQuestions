@@ -5,25 +5,40 @@ import Blind75.ValidAnagram.Solutions.FrequencyOfCharacters;
 import Blind75.ValidAnagram.Solutions.ISolution;
 import Blind75.ValidAnagram.Solutions.SortingSolution;
 
+class TestCase {
+    public String s;
+    public String t;
+
+    public TestCase(String s, String t) {
+        this.s = s;
+        this.t = t;
+    }
+
+    @Override
+    public String toString() {
+        return "{ " + s + ", " + t + " }";
+    }
+}
+
 public class ValidAnagramDriver {
     public static void main(String[] args) {
-        String[][] cases = {
-                { "anagram", "nagaram" },
-                { "rat", "car" },
-                { "aacc", "cacc" }
+        TestCase[] testCases = new TestCase[] {
+                new TestCase("anagram", "nagaram"),
+                new TestCase("rat", "car"),
+                new TestCase("aacc", "cacc"),
         };
 
-        ISolution[] solutions = new ISolution[3];
-        solutions[0] = new BruteForceSolution();
-        solutions[1] = new SortingSolution();
-        solutions[2] = new FrequencyOfCharacters();
+        ISolution[] solutions = new ISolution[] {
+                new BruteForceSolution(),
+                new SortingSolution(),
+                new FrequencyOfCharacters()
+        };
 
-        for(int i=0; i<solutions.length; i++) {
-            System.out.println("Solution " + (i+1));
-
-            for(String[] c : cases) {
-                System.out.println("Test case: " + c[0] + ", " + c[1]);
-                boolean result = solutions[i].isAnagram(c[0], c[1]);
+        for (ISolution solution : solutions) {
+            System.out.println(solution.getClass().getSimpleName());
+            for (TestCase testCase : testCases) {
+                System.out.println("Test case: " + testCase.toString());
+                boolean result = solution.isAnagram(testCase.s, testCase.t);
                 System.out.println("Result: " + result);
             }
 
