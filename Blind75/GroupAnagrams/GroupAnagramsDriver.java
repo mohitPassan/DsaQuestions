@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import Blind75.GroupAnagrams.Solutions.BruteComparison;
+import Blind75.GroupAnagrams.Solutions.FrequencyCountHashmap;
 import Blind75.GroupAnagrams.Solutions.ISolution;
 import Blind75.GroupAnagrams.Solutions.SortedWordHashmap;
 
@@ -30,11 +31,12 @@ public class GroupAnagramsDriver {
 
         ISolution[] solutions = new ISolution[] {
             new BruteComparison(),
-            new SortedWordHashmap()
+            new SortedWordHashmap(),
+            new FrequencyCountHashmap()
         };
 
         for(ISolution solution : solutions) {
-            System.out.println(solution.getClass().getSimpleName());
+            System.out.println("--- " + solution.getClass().getSimpleName() + " ---");
 
             for(TestCase testCase : testCases) {
                 System.out.println("Test case: " + testCase.toString());
@@ -43,6 +45,7 @@ public class GroupAnagramsDriver {
                 List<List<String>> groups = solution.groupAnagrams(testCase.strs.clone());
                 System.out.println("Result: " + groups.toString());
             }
+            System.out.println();
         }
     }
 }
