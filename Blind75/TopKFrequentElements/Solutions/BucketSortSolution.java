@@ -19,6 +19,7 @@ public class BucketSortSolution implements ISolution {
             }
         }
 
+        @SuppressWarnings("unchecked")
         List<Integer>[] bucket = (List<Integer>[]) new ArrayList[nums.length + 1];
         for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
             int count = entry.getValue();
