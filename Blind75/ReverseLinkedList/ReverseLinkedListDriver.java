@@ -1,10 +1,10 @@
 package Blind75.ReverseLinkedList;
 
-import Blind75.ReverseLinkedList.LinkedList.LinkedList;
-import Blind75.ReverseLinkedList.LinkedList.ListNode;
 import Blind75.ReverseLinkedList.Solutions.ISolution;
 import Blind75.ReverseLinkedList.Solutions.IterativeSolution;
 import Blind75.ReverseLinkedList.Solutions.RecursiveSolution;
+import DataStructures.LinkedList.LinkedList;
+import DataStructures.LinkedList.ListNode;
 
 class TestCase {
     LinkedList list;

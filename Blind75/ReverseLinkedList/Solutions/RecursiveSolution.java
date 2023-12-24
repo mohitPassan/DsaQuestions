@@ -1,6 +1,6 @@
 package Blind75.ReverseLinkedList.Solutions;
 
-import Blind75.ReverseLinkedList.LinkedList.ListNode;
+import DataStructures.LinkedList.ListNode;
 
 public class RecursiveSolution implements ISolution {
     @Override
