@@ -27,11 +27,10 @@ public class BinaryTree {
         if (index >= size) {
             return null;
         }
-
         if(arr[index] == null) {
             return null;
         }
-        
+
         TreeNode root = new TreeNode(arr[index]);
         TreeNode leftTree = constructCompleteTree(arr, 2 * index + 1, size);
         TreeNode rightTree = constructCompleteTree(arr, 2 * index + 2, size);
