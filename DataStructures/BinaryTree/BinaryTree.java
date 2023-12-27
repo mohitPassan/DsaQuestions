@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BinaryTree {
-    TreeNode root;
+    public TreeNode root;
 
     public enum PrintMethod {
         PRE_ORDER,
@@ -89,21 +89,54 @@ public class BinaryTree {
     }
 
     public static void levelOrderTraversal(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             TreeNode current = queue.peek();
             queue.remove();
             System.out.print(current.val + " ");
 
-            if(current.left != null) {
+            if (current.left != null) {
                 queue.add(current.left);
             }
 
-            if(current.right != null) {
+            if (current.right != null) {
                 queue.add(current.right);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        if (this.root == null) {
+            return "[]";
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            TreeNode current = queue.peek();
+            queue.remove();
+
+            sb.append(current.val + " ");
+
+            if (current.left != null) {
+                queue.add(current.left);
+            }
+
+            if (current.right != null) {
+                queue.add(current.right);
+            }
+        }
+
+        return sb.toString();
     }
 }
