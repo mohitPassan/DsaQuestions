@@ -21,9 +21,9 @@ class TestCase {
 public class InvertABinaryTreeDriver {
     public static void main(String[] args) {
         TestCase[] testCases = new TestCase[] {
-                new TestCase(new BinaryTree(new int[] { 4, 2, 7, 1, 3, 6, 9 })),
-                new TestCase(new BinaryTree(new int[] { 2, 1, 3 })),
-                new TestCase(new BinaryTree(new int[] {}))
+                new TestCase(new BinaryTree(new Integer[] { 4, 2, 7, 1, 3, 6, 9 })),
+                new TestCase(new BinaryTree(new Integer[] { 2, 1, 3 })),
+                new TestCase(new BinaryTree(new Integer[] {}))
         };
 
         ISolution[] solutions = new ISolution[] {
