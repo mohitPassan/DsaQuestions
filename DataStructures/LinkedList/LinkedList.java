@@ -1,7 +1,5 @@
 package DataStructures.LinkedList;
 
-import java.util.List;
-
 public class LinkedList {
     public ListNode head;
 
