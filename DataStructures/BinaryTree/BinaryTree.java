@@ -17,17 +17,21 @@ public class BinaryTree {
         this.root = null;
     }
 
-    public BinaryTree(int[] arr) {
+    public BinaryTree(Integer[] arr) {
         int size = arr.length;
         TreeNode root = constructCompleteTree(arr, 0, size);
         this.root = root;
     }
 
-    private TreeNode constructCompleteTree(int[] arr, int index, int size) {
+    private TreeNode constructCompleteTree(Integer[] arr, int index, int size) {
         if (index >= size) {
             return null;
         }
 
+        if(arr[index] == null) {
+            return null;
+        }
+        
         TreeNode root = new TreeNode(arr[index]);
         TreeNode leftTree = constructCompleteTree(arr, 2 * index + 1, size);
         TreeNode rightTree = constructCompleteTree(arr, 2 * index + 2, size);
@@ -92,7 +96,7 @@ public class BinaryTree {
         if (root == null) {
             return;
         }
-        
+
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
